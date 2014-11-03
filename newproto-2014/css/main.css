@@ -1,0 +1,697 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* new clearfix */
+.clearfix:after {
+	visibility: hidden;
+	display: block;
+	font-size: 0;
+	content: " ";
+	clear: both;
+	height: 0;
+	}
+* html .clearfix             { zoom: 1; } /* IE6 */
+*:first-child+html .clearfix { zoom: 1; } /* IE7 */
+
+
+
+/* MAIN CSS STYLES */
+
+html,body {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 100%;
+	background: #efefef;
+}
+
+
+/* TYPE */
+
+h1 {
+	font-size: 600%;
+	line-height: 1.1em;
+	margin-bottom: 0.25em;
+	font-weight: bold;
+}
+
+h2 {
+	font-size: 420%;
+	line-height: 1.1em;
+	margin-bottom: 0.5em;
+}
+
+h3 {
+	font-size: 270%;
+	line-height: 1.1em;
+	margin-bottom: 0.5em;
+}
+
+button.mover {
+	font-size: 270%;
+	padding: 10px 20px;
+	float: right;
+	background: #2564b3;
+	color: white;
+	border: none;
+	border-radius: 3px;
+}
+
+button.mover:hover {
+	background-color: #7ba7d6;
+	cursor: pointer;
+}
+
+
+/* GLOBAL */
+
+.floatleft {
+    float: left;
+}
+
+.floatright {
+    float: right;
+}
+
+header {
+	position: absolute;
+	top: 0; left: 0; right: 0;
+	z-index: 999;
+}
+
+
+/*  NAV  ============================================================================= */
+
+
+
+
+nav {
+	height: auto;
+	background: rgba(0,0,0,0.6);
+	color: white;
+}
+
+.nav-left {
+	float: left;
+}
+
+
+.nav-util,
+.nav-main {
+	float: right;
+	margin: 0; padding: 0;
+	display: block;
+}
+
+
+.nav-util li a,
+.nav-main li a { margin-left: 30px; margin-right: 0px;}
+
+
+nav li {
+	display: inline;
+	line-height: 50px;
+	font-size: 1.2em;
+	margin: 0; padding: 0;
+	vertical-align: top;
+}
+
+nav li a {
+	display: inline-block;
+	float: none;
+	text-decoration: none;
+	color: rgba(255,255,255,0.6);
+	text-align: center;
+	font-size: 1em;
+}
+
+nav li a:hover,
+nav li a.active {
+	color: rgba(255,255,255,0.95);
+}
+
+
+nav li.title {
+	font-size: 1.4em;
+}
+
+nav li.logo a {
+	display: block;
+	width: 50px;
+	height: 50px;
+	background: white; color: black;
+	float: left;
+	margin-right: 20px;
+}
+
+nav li.rnav { display: none; }
+
+
+.nav-util li a {
+	font-size: 1.6em;
+}
+
+.nav-util li a:hover {
+}
+
+
+/* FIXED CODE */
+
+
+@keyframes movein
+{
+0%   {top:-50px;}
+100% {top:0px;}
+}
+
+@-webkit-keyframes movein /* Safari and Chrome */
+{
+0%   {top:-50px;}
+100% {top:0px;}
+}
+
+@-moz-keyframes movein /* Mozilla */
+{
+0%   {top:-50px;}
+100% {top:0px;}
+}
+
+
+@-o-keyframes movein /* Opera */
+{
+0%   {top:-50px;}
+100% {top:0px;}
+}
+
+
+.fixed {
+	text-align: left;
+	width: 100%;
+    position: fixed;
+ 	z-index: 999;
+   	top: 0; 
+	margin-top: 0;
+	padding-top: 0;
+
+	animation: movein 0.5s;
+	-webkit-animation: movein 0.5s; /* Safari and Chrome */
+}
+
+.fixed nav {
+	background: rgba(0,0,0,0.9);
+}
+
+
+
+/*  SCROLLING PANELS  ============================================================================= */
+
+body {
+	/* DISABLED: overflow: hidden; */
+}
+
+.gridpanel-wrapper {
+	position: absolute;
+	top: 0;
+	left: 0; 
+	right: 0;
+	bottom: 0;
+	z-index: 9;
+}
+
+.gridpanel {
+	width: 100%;
+	height: 100%;
+}
+
+.gridpanel-contents {
+	width: 1130px; 
+	position: relative;
+	z-index: 9;
+	text-align: left;
+	margin: 0 auto;
+
+}
+
+header .gridpanel-contents {
+	padding-top: 0;
+}
+
+section .gridpanel-contents {
+	padding-top: 8em;
+	padding-bottom: 20px;
+}
+
+
+/*
+#top {
+	background-color: #7ba7d6;
+	background-size: cover;
+	background-position: 50% 50%;
+}
+
+#mid {
+	background-color: #5288c6;
+	background-size: cover;
+	background-position: 50% 50%;
+	min-height: 600px;
+}
+
+#bot {
+	background-color: #2564b3;
+	background-size: cover;
+	background-position: 50% 50%;
+}
+
+*/
+
+
+
+
+
+
+
+/*  SECTIONS  ============================================================================= */
+
+header {
+
+}
+
+footer {
+
+}
+
+section > *:last-child,
+header > *:last-child { margin-bottom: 0; }
+
+/*  GRID SYSTEM (12 COLUMN)  ============================================================================= */
+
+
+.row:before,
+.row:after {
+    content:"";
+    display:table;
+}
+.row:after {
+    clear:both;
+}
+.row {
+    position: relative;
+	width: 100%;
+	zoom:1; /* For IE 6/7 (trigger hasLayout) */
+}
+
+/*  GRID COLUMN SETUP   ==================================================================== */
+
+.col {
+	display: block;
+	float:left;
+	margin: 0 0 1em 1.6%;
+/*	min-height: 40px;
+	background: rgba(255,255,255,0.3); */
+}
+
+.col:first-child { margin-left: 0; } /* all browsers except IE6 and lower */
+
+
+/*  GRID OF TWELVE   ============================================================================= */
+
+.col-12 {
+	width: 100%;
+}
+
+.col-11 {
+	width: 91.53%;
+}
+
+.col-10 {
+	width: 83.06%;
+}
+
+.col-9 {
+	width: 74.6%;
+}
+
+.col-8 {
+	width: 66.13%;
+}
+
+.col-7 {
+	width: 57.66%; 
+}
+
+.col-6 {
+	width: 49.2%; 
+}
+
+.col-5 {
+	width: 40.73%; 
+}
+
+.col-4 {
+	width: 32.26%; 
+}
+
+.col-3 {
+	width: 23.8%;
+}
+
+.col-2 {
+	width: 15.33%; 
+}
+
+.col-1 {
+	width: 6.86%; 
+}
+
+
+
+
+
+@media only screen and (min-width: 960px) and (max-width: 1179px) { 
+	.gridpanel-contents {
+		width: 960px;
+	}
+}
+
+@media only screen and (min-width: 768px) and (max-width: 959px) { 
+	.gridpanel-contents {
+		width: 768px;
+	}
+}
+
+@media only screen and (min-width: 768px) {
+	.nav-main {
+		display: block;
+	}
+}
+
+/*  767 */
+
+@media only screen and (max-width: 767px) {
+	
+	body {
+		
+	}
+	
+	section,
+	.gridpanel {
+		height: auto;
+	}
+	
+	.gridpanel-contents {
+		position: relative;
+	}
+	
+	
+	.col { 
+			margin: 10px 0 10px 0%;
+		}
+
+		.gridpanel-contents {
+			width: 90%;
+			margin: 0 2.5%;
+			padding: 0 2.5%;
+		}
+
+
+	.col-12 {
+		width: 100%; 
+	}
+	.col-11 {
+		width: 100%; 
+	}
+	.col-10 {
+		width: 100%; 
+	}
+	.col-9 {
+		width: 100%; 
+	}
+	.col-8 {
+		width: 100%; 
+	}
+	.col-7 {
+		width: 100%; 
+	}
+	.col-6 {
+		width: 100%; 
+	}
+	.col-5 {
+		width: 100%; 
+	}
+	.col-4 {
+		width: 100%; 
+	}
+	.col-3 {
+		width: 100%; 
+	}
+	.col-2 {
+		width: 100%; 
+	}
+	.col-1 {
+		width: 100%; 
+	}
+	
+	
+	.col.col-xs-12,
+	.col.col-xs-11,
+	.col.col-xs-10,
+	.col.col-xs-9.
+	.col.col-xs-8,
+	.col.col-xs-7,
+	.col.col-xs-6,
+	.col.col-xs-5,
+	.col.col-xs-4,
+	.col.col-xs-3,
+	.col.col-xs-2,
+	.col.col-xs-1 {
+		float: left;
+		margin: 0 0 1em 1.6%; 
+		padding: 0; 
+	}
+	
+	.col.col-xs-12 {
+		width: 100%;
+	}
+
+	.col.col-xs-11 {
+		width: 91.53%;
+	}
+
+	.col.col-xs-10 {
+		width: 83.06%;
+	}
+
+	.col.col-xs-9 {
+		width: 74.6%;
+	}
+
+	.col.col-xs-8 {
+		width: 66.13%;
+	}
+
+	.col.col-xs-7 {
+		width: 57.66%; 
+	}
+
+	.col.col-xs-6 {
+		width: 49.2%; 
+	}
+
+	.col.col-xs-5 {
+		width: 40.73%; 
+	}
+
+	.col.col-xs-4 {
+		width: 32.26%; 
+	}
+
+	.col.col-xs-3 {
+		width: 23.8%;
+	}
+
+	.col.col-xs-2 {
+		width: 15.33%; 
+	}
+
+	.col.col-xs-1 {
+		width: 6.86%; 
+	}
+	
+	
+	/* NAVBAR */ 
+	
+	header .gridpanel-contents {
+		width: 100%;
+		margin: 0; padding: 0;
+	}
+	
+	.navbar {
+		height: auto;
+		min-height: 48px;
+	}
+	
+	nav li { line-height: 48px; }
+
+	.nav-main { display: none; }
+	
+	.rnav {  
+	   display: inline !important;
+	}
+	
+	.nav-left li a { margin-left: 0; margin-right: 10px;}
+	
+	.nav-util li a,
+	.nav-main li a { margin-left: 20px; margin-right: 0px;}
+	
+	
+	nav li.title { display: none;}
+	
+	nav li.rnav { display: inline; margin-right: 15px;}
+	
+	.nav-main {
+		float: none;
+		clear: both;
+		display: none;
+		background: black;
+	}
+	
+	.nav-main li {
+		display: block;
+		margin: 0; padding: 0;
+	}
+
+	.nav-main li a { 
+		display: block;
+		float: none;
+		text-align: left;
+		font-size: 1.8em;
+		line-height: 2.4em;
+		margin: 0; padding: 0 20px;	
+			-webkit-transition: all 0.5s ease-in-out;
+			  -moz-transition: all 0.5s ease-in-out;
+			  -o-transition: all 0.5s ease-in-out;
+			  transition: all 0.5s ease-in-out;
+	}
+	
+	.nav-main li a:hover {
+		background: #444;
+		padding-left: 48px;
+	
+	}
+	
+	
+	
+	
+}
+
+
+
+
+/* LEFTOVER */
+
+html { 
+-webkit-overflow-scrolling : touch; 
+-webkit-tap-highlight-color : rgb(52,158,219); 
+-webkit-text-size-adjust : 100%; 
+-ms-text-size-adjust : 100%; }
+
+.clearfix { 
+zoom : 1; }
+
+::-webkit-selection { 
+background : rgb(23,119,175); 
+color : rgb(250,250,250); 
+text-shadow : none; }
+
+::-moz-selection { 
+background : rgb(23,119,175); 
+color : rgb(250,250,250); 
+text-shadow : none; }
+
+::selection { 
+background : rgb(23,119,175); 
+color : rgb(250,250,250); 
+text-shadow : none; }
+
+button, 
+input[type="button"], 
+input[type="reset"], 
+input[type="submit"] { 
+-webkit-appearance : button; }
+
+::-webkit-input-placeholder {
+font-size : .875em; 
+line-height : 1.4; }
+
+input:-moz-placeholder { 
+font-size : .875em; 
+line-height : 1.4; }
+
+.ie7 img,
+.iem7 img { 
+-ms-interpolation-mode : bicubic; }
+
+input[type="checkbox"], 
+input[type="radio"] { 
+box-sizing : border-box; }
+
+input[type="search"] { 
+-webkit-box-sizing : content-box;
+-moz-box-sizing : content-box; }
+
+button::-moz-focus-inner, 
+input::-moz-focus-inner { 
+padding : 0;
+border : 0; }
+
+p {
+/* http://www.w3.org/TR/css3-text/#hyphenation */
+-webkit-hyphens : auto;
+-webkit-hyphenate-character : "\2010";
+-webkit-hyphenate-limit-after : 1;
+-webkit-hyphenate-limit-before : 3;
+-moz-hyphens : auto; }
